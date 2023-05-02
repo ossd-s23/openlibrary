@@ -121,7 +121,7 @@ class RegisterForm(Form):
         ),
         Checkbox(
             'safe_mode',
-            description=_('I want to opt in to Internet Archive\'s safe mode'),
+            description=_("I want to opt in to Open Library's safe mode"),
         ),
     ]
 
