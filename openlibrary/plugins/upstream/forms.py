@@ -119,6 +119,10 @@ class RegisterForm(Form):
                 'that runs Open Library.'
             ),
         ),
+        Checkbox(
+            'safe_mode',
+            description=_('I want to opt in to Internet Archive\'s safe mode'),
+        ),
     ]
 
     def __init__(self):

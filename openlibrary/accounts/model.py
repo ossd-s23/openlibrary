@@ -408,6 +408,7 @@ class OpenLibraryAccount(Account):
         password,
         displayname=None,
         verified=False,
+        safe_mode="",
         retries=0,
         test=False,
     ):
@@ -474,7 +475,9 @@ class OpenLibraryAccount(Account):
         from openlibrary.accounts import RunAs
 
         with RunAs(username):
-            ol_account.get_user().save_preferences({'public_readlog': 'yes'})
+            ol_account.get_user().save_preferences(
+                {'public_readlog': 'yes', 'safe_mode': safe_mode}
+            )
 
         return ol_account
 

@@ -282,6 +282,7 @@ class account_create(delegate.page):
                 """  # nopep8
                 mls = ['ml_best_of', 'ml_updates']
                 notifications = mls if f.ia_newsletter.checked else []
+                safe_mode = 'yes' if f.safe_mode.checked else ""
                 InternetArchiveAccount.create(
                     screenname=f.username.value,
                     email=f.email.value,
